@@ -23,4 +23,5 @@ public class AllIDEsPageTest extends BaseTest {
         AllIDEsPage url = new AllIDEsPage(getDriver());
         url.compareUrl();
     }
+    
 }
