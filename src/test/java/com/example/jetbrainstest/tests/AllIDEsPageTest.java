@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 public class AllIDEsPageTest extends BaseTest {
 
     private AllIDEsPage allIDEsPage;
+
     @BeforeEach
     @Override
     public void setUp() {
@@ -16,15 +17,10 @@ public class AllIDEsPageTest extends BaseTest {
 
     @Test
     public void businessButton(){
-        AllIDEsPage cookies = new AllIDEsPage(getDriver());
-        cookies.cookiesButton();
-
-        AllIDEsPage business = new AllIDEsPage(getDriver());
-        business.businessButton();
-
+        AllIDEsPage allIDEsPage = new AllIDEsPage(getDriver());
+        allIDEsPage.acceptCokies();
+        allIDEsPage.clickBusinessButton();
         AllIDEsPage url = new AllIDEsPage(getDriver());
         url.compareUrl();
     }
-
-
 }

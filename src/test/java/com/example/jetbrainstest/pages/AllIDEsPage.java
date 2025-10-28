@@ -17,19 +17,19 @@ public class AllIDEsPage {
     @FindBy(xpath = "//button[@type='button' and @data-rs-internal='switcher__option']/span[text()='Business']")
     private WebElement businessButton;
 
-    public void cookiesButton(){
+    public void acceptCokies(){
         driver.get("https://www.jetbrains.com/ides/");
         cookiesButton.click();
     }
 
-    public void businessButton(){
+    public void clickBusinessButton(){
         businessButton.click();
     }
 
     public void compareUrl(){
         String compareUrl = "https://www.jetbrains.com/business/";
-        assertEquals(compareUrl, driver.getCurrentUrl());
         System.out.println("В поисковой строке url: " + compareUrl);
+        assertEquals(compareUrl, driver.getCurrentUrl());
     }
 
     public AllIDEsPage(WebDriver driver){
