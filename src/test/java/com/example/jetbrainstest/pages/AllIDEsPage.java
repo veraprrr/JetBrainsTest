@@ -17,7 +17,7 @@ public class AllIDEsPage {
     @FindBy(xpath = "//button[@type='button' and @data-rs-internal='switcher__option']/span[text()='Business']")
     private WebElement businessButton;
 
-    public void acceptCokies(){
+    public void acceptCookies(){
         driver.get("https://www.jetbrains.com/ides/");
         cookiesButton.click();
     }

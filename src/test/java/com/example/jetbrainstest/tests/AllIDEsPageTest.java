@@ -18,7 +18,7 @@ public class AllIDEsPageTest extends BaseTest {
     @Test
     public void businessButton(){
         AllIDEsPage allIDEsPage = new AllIDEsPage(getDriver());
-        allIDEsPage.acceptCokies();
+        allIDEsPage.acceptCookies();
         allIDEsPage.clickBusinessButton();
         AllIDEsPage url = new AllIDEsPage(getDriver());
         url.compareUrl();
