@@ -4,10 +4,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class AllIDEsPage {
+
+    private final Logger LOG = LoggerFactory.getLogger(AllIDEsPage.class);
 
     WebDriver driver;
 
@@ -28,7 +32,7 @@ public class AllIDEsPage {
 
     public void compareUrl(){
         String compareUrl = "https://www.jetbrains.com/business/";
-        System.out.println("В поисковой строке url: " + compareUrl);
+        LOG.info("В поисковой строке url: " + compareUrl);
         assertEquals(compareUrl, driver.getCurrentUrl());
     }
 
