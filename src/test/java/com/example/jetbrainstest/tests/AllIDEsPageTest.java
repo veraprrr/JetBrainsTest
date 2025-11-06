@@ -1,6 +1,7 @@
 package com.example.jetbrainstest.tests;
 
 import com.example.jetbrainstest.pages.AllIDEsPage;
+import io.qameta.allure.Step;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -16,11 +17,10 @@ public class AllIDEsPageTest extends BaseTest {
     }
 
     @Test
-    public void businessButton(){
-        AllIDEsPage allIDEsPage = new AllIDEsPage(getDriver());
+    @Step("Проверка переключения на страницу с бизнес-тарифами")
+    public void businessButtonTest(){
         allIDEsPage.acceptCookies();
         allIDEsPage.clickBusinessButton();
-        AllIDEsPage url = new AllIDEsPage(getDriver());
-        url.compareUrl();
+        allIDEsPage.compareUrl();
     }
 }

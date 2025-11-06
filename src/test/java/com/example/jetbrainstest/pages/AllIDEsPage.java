@@ -27,6 +27,7 @@ public class AllIDEsPage {
     }
 
     public void clickBusinessButton(){
+        driver.get("https://www.jetbrains.com/ides/");
         businessButton.click();
     }
 
