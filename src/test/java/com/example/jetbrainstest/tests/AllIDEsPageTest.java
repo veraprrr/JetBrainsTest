@@ -18,18 +18,18 @@ public class AllIDEsPageTest extends BaseTest {
     @Test
     public void businessButtonTest(){
         allIDEsPage.acceptCookies();
-        LOG.info("Принимаем куки");
+        LOG.infoWithScreenshot("Принимаем куки");
         allIDEsPage.clickBusinessButton();
-        LOG.info("Перешли на вкладку бизнес-тарифов");
+        LOG.infoWithScreenshot("Перешли на вкладку бизнес-тарифов");
         allIDEsPage.compareUrl();
     }
 
     @Test
     public void exploreOffersLinkTest(){
         allIDEsPage.acceptCookies();
-        LOG.info("Принимаем куки");
+        LOG.infoWithScreenshot("Принимаем куки");
         allIDEsPage.clickExploreOffersLink();
-        LOG.info("Кликнули по ссылке ExploreOffers");
+        LOG.infoWithScreenshot("Кликнули по ссылке ExploreOffers");
         allIDEsPage.clickLearnMoreLink();
     }
 }
