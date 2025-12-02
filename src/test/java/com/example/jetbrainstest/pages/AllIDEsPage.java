@@ -27,38 +27,40 @@ public class AllIDEsPage {
     @FindBy(css = "a._rs-link_tfgi0h_1[href='/startups/#startup-program']")
     private WebElement learnMoreLink;
 
-    public void acceptCookies(){
+    public AllIDEsPage(WebDriver driver) {
+        this.driver = driver;
+        PageFactory.initElements(driver, this);
+    }
+
+    public void acceptCookies() {
         driver.get("https://www.jetbrains.com/ides/");
         cookiesButton.click();
+        LOG.info("Принимаем куки");
     }
 
-    public void clickBusinessButton(){
+    public void clickBusinessButton() {
         driver.get("https://www.jetbrains.com/ides/");
         businessButton.click();
+        LOG.info("Перешли на вкладку бизнес-тарифов");
     }
 
-    public void compareUrl(){
+    public void compareUrl() {
         String compareUrl = "https://www.jetbrains.com/business/";
         LOG.info("В поисковой строке url: " + compareUrl);
-        assertEquals(compareUrl, driver.getCurrentUrl());
+        assertEquals(compareUrl, driver.getCurrentUrl(), "url не совпадает");
     }
 
-    public void clickExploreOffersLink(){
+    public void checkLearnMoreLink() {
         exploreOffersLink.click();
         String compareUrlExploreOffersLink = "https://www.jetbrains.com/store/?section=discounts";
-        LOG.info("В поисковой строке url: " + compareUrlExploreOffersLink);
-        assertEquals(compareUrlExploreOffersLink, driver.getCurrentUrl());
+        LOG.info("Кликнули по ссылке ExploreOffers. В поисковой строке url: " + compareUrlExploreOffersLink);
+        assertEquals(compareUrlExploreOffersLink, driver.getCurrentUrl(), "url не совпадает");
     }
 
-    public void clickLearnMoreLink(){
+    public void clickLearnMoreLink() {
         learnMoreLink.click();
         String compareUrlLearnMoreLink = "https://www.jetbrains.com/startups/#startup-program";
         LOG.info("В поисковой строке url: " + compareUrlLearnMoreLink);
         assertEquals(compareUrlLearnMoreLink, driver.getCurrentUrl());
-    }
-
-    public AllIDEsPage(WebDriver driver){
-        this.driver = driver;
-        PageFactory.initElements(driver,this);
     }
 }

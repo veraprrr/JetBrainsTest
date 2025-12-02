@@ -19,20 +19,16 @@ public class AllIDEsPageTest extends BaseTest {
     }
 
     @Test
-    public void businessButtonTest(){
+    public void businessButtonTest() {
         allIDEsPage.acceptCookies();
-        LOG.info("Принимаем куки");
         allIDEsPage.clickBusinessButton();
-        LOG.info("Перешли на вкладку бизнес-тарифов");
         allIDEsPage.compareUrl();
     }
 
     @Test
-    public void exploreOffersLinkTest(){
+    public void exploreOffersLinkTest() {
         allIDEsPage.acceptCookies();
-        LOG.info("Принимаем куки");
-        allIDEsPage.clickExploreOffersLink();
-        LOG.info("Кликнули по ссылке ExploreOffers");
+        allIDEsPage.checkLearnMoreLink();
         allIDEsPage.clickLearnMoreLink();
     }
 }
