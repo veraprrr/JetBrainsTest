@@ -1,9 +1,12 @@
 package com.example.jetbrainstest.tests;
 
+import com.example.jetbrainstest.NewExtension;
 import com.example.jetbrainstest.pages.AllIDEsPage;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
+@ExtendWith(NewExtension.class)
 public class AllIDEsPageTest extends BaseTest {
 
     private AllIDEsPage allIDEsPage;
@@ -18,18 +21,18 @@ public class AllIDEsPageTest extends BaseTest {
     @Test
     public void businessButtonTest(){
         allIDEsPage.acceptCookies();
-        LOG.infoWithScreenshot("Принимаем куки");
+        LOG.info("Принимаем куки");
         allIDEsPage.clickBusinessButton();
-        LOG.infoWithScreenshot("Перешли на вкладку бизнес-тарифов");
+        LOG.info("Перешли на вкладку бизнес-тарифов");
         allIDEsPage.compareUrl();
     }
 
     @Test
     public void exploreOffersLinkTest(){
         allIDEsPage.acceptCookies();
-        LOG.infoWithScreenshot("Принимаем куки");
+        LOG.info("Принимаем куки");
         allIDEsPage.clickExploreOffersLink();
-        LOG.infoWithScreenshot("Кликнули по ссылке ExploreOffers");
+        LOG.info("Кликнули по ссылке ExploreOffers");
         allIDEsPage.clickLearnMoreLink();
     }
 }
