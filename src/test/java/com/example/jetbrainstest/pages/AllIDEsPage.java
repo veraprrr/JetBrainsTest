@@ -61,6 +61,6 @@ public class AllIDEsPage {
         learnMoreLink.click();
         String compareUrlLearnMoreLink = "https://www.jetbrains.com/startups/#startup-program";
         LOG.info("В поисковой строке url: " + compareUrlLearnMoreLink);
-        assertEquals(compareUrlLearnMoreLink, driver.getCurrentUrl());
+        assertEquals(compareUrlLearnMoreLink, driver.getCurrentUrl(), "url не совпадает");
     }
 }
